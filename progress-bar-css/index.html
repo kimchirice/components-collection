@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+    <head lang="en">
+        <title>Progress Bar CSS</title>
+    </head>    
+    <body>
+        <div>
+            <h3>Progress Bar CSS</h3>
+        </div>
+        <div class="bar-container">
+            <div class="bar"></div>
+        </div>
+        <div>
+            <button class="btn-start" onclick="fillBar(4)">Start</button>
+        </div> 
+    </body>
+
+    <style>
+        body {
+            display: flexbox;
+        }
+        h3{
+            margin-bottom: 0px
+        }
+        .bar-container {
+            background-color: lightgrey;
+            width: 240px;
+            height: 48px;
+        }
+
+        .bar {
+            background-color: lightpink;
+            width: 0;
+            height: 48px;
+        }
+
+        .btn-start {
+            background-color: cornflowerblue;
+            width: 48px;
+            height: 24px;
+        }
+
+    </style>
+
+    <script>
+        function fillBar(seconds) {
+            const bar = document.querySelector('.bar')
+            bar.style.transition = `${seconds}s linear width`;
+            bar.style.width = '100%'; 
+        }
+    </script>
+</html>
