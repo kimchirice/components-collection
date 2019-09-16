@@ -36,6 +36,17 @@
 
         </style>
         <script>
+            function fillBar(secondes) {
+                let atPercent = 0;
+                const bar = document.querySelector('.bar')
+                const interveral = setInterval(()=>{
+                    bar.style.width = atPercent + "%";
+                    atPercent += 1;
+                    if (atPercent >= 100){
+                    clearInterval(interveral)}
+                    
+                }, secondes * 1000 /100)
+            }
         </script>
     </body>
 </html>
