@@ -1,2 +1,2 @@
 # components-collection
-  # progress-bar
+  * progress-bar
