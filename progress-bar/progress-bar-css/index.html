@@ -5,14 +5,25 @@
     </head>    
     <body>
         <div>
-            <h3>Progress Bar CSS</h3>
+            <div id="pro-bat-js">
+                <h3>Progress Bar JS</h3>
+            </div>
+            <div class="bar-container">
+                <div class="bar-js"></div>
+            </div>
+            <div>
+                <button class="btn-start" onclick="fillBarJs(2)">Start</button>
+            </div> 
+            <div id="pro-bat-css">
+                    <h3>Progress Bar CSS</h3>
+                </div>
+                <div class="bar-container">
+                    <div class="bar-css"></div>
+                </div>
+                <div>
+                    <button class="btn-start" onclick="fillBarCss(2)">Start</button>
+                </div> 
         </div>
-        <div class="bar-container">
-            <div class="bar"></div>
-        </div>
-        <div>
-            <button class="btn-start" onclick="fillBar(4)">Start</button>
-        </div> 
     </body>
 
     <style>
@@ -43,10 +54,21 @@
     </style>
 
     <script>
-        function fillBar(seconds) {
-            const bar = document.querySelector('.bar')
-            bar.style.transition = `${seconds}s linear width`;
-            bar.style.width = '100%'; 
+        function fillBarCss(seconds) {
+            const barCss = document.querySelector('.bar-css')
+            barCss.style.transition = `${seconds}s linear width`;
+            barCss.style.width = '100%'; 
+        }
+        function fillBarJs(seconds){
+            const barJs = document.querySelector('.bar-js');
+            let atPercent = 0;
+            const interval = setInterval(()=>{
+                barJs.style.width = atPercent + '%';
+                atPercent += 1;
+                if (atPercent > 100){
+                    clearInterval(interval);
+                }
+            }, seconds * 1000/100)
         }
     </script>
 </html>
